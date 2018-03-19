@@ -1,0 +1,61 @@
+version: '1.0.{build}'
+image: Visual Studio 2017
+
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
+
+pull_requests:  
+  do_not_increment_build_number: true
+
+branches:
+  only:
+  - master
+
+nuget:  
+  disable_publish_on_pr: true
+
+configuration: Release
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
+before_build:
+  - ps: dotnet --version
+  - ps: dotnet restore ./src/Qweex.Monads/Qweex.Monads.csproj --verbosity m
+
+build_script:
+  - ps: dotnet publish ./src/Qweex.Monads/Qweex.Monads.csproj
+  - ps: dotnet pack ./src/Qweex.Monads/Qweex.Monads.csproj -c Release -o .\artifacts
+
+clone_depth: 1
+
+test_script:
+  - ps: dotnet restore ./src/Qweex.Monads/Qweex.Monads.csproj --verbosity m
+  - ps: cd ./test/Qweex.Monads.Tests
+  - ps: dotnet test
+
+artifacts:  
+- path: .\src\Qweex.Monads\artifacts\**\*.nupkg
+  name: NuGet
+
+deploy:  
+- provider: NuGet
+  name: production
+  api_key: 
+    secure: dmrGo5Xy1ml5Jnl4tqL9QmXOzQlYPI2Cgyl3TgnfTFg7bNauEZfh7HdZ/+fLG0g3
+  skip_symbols: false
+  on:
+    branch: master
+
+notifications:
+- provider: GitHubPullRequest
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true

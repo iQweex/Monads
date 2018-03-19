@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27512.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qweex.Monads", "src\Qweex.Monads\Qweex.Monads.csproj", "{5AEC2A20-1900-419A-8989-E9B6DDBD688F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qweex.Monads.Tests", "test\Qweex.Monads.Tests\Qweex.Monads.Tests.csproj", "{4507C304-8BA8-4C82-9EDF-3A8D96651E65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AEC2A20-1900-419A-8989-E9B6DDBD688F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AEC2A20-1900-419A-8989-E9B6DDBD688F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AEC2A20-1900-419A-8989-E9B6DDBD688F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AEC2A20-1900-419A-8989-E9B6DDBD688F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4507C304-8BA8-4C82-9EDF-3A8D96651E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4507C304-8BA8-4C82-9EDF-3A8D96651E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4507C304-8BA8-4C82-9EDF-3A8D96651E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4507C304-8BA8-4C82-9EDF-3A8D96651E65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74B87FF7-282F-4358-9A0A-BD06D4D3C063}
+	EndGlobalSection
+EndGlobal
