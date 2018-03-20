@@ -9,15 +9,15 @@ namespace Qweex.Monads.Either.Type
         public abstract class Func<TInput, TResult>
             : TEither<TLeft, IFunc<TInput, TResult>>.P<Func<TInput, TResult>>
         {
-            public Func(Func<TUnion<TLeft, IFunc<TInput, TResult>>> factory) : base(factory)
+            protected Func(Func<Func<TInput, TResult>> factory) : base(factory)
             {
             }
 
-            public Func(TLeft value) : base(value)
+            protected Func(TLeft value) : base(value)
             {
             }
 
-            public Func(IFunc<TInput, TResult> value) : base(value)
+            protected Func(IFunc<TInput, TResult> value) : base(value)
             {
             }
         }
@@ -30,8 +30,9 @@ namespace Qweex.Monads.Either.Type
             TMonad<TRight>.T<TLeft>.P<E>,
             TFunctor<TRight>.T<TLeft>.P<E>,
             TApplicative<TRight>.T<TLeft>.P<E>
+            where E : TUnion<TLeft, TRight>
         {
-            public P(Func<TUnion<TLeft, TRight>> factory) : base(factory)
+            public P(Func<E> factory) : base(factory)
             {
             }
 

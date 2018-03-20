@@ -11,7 +11,7 @@ namespace Qweex.Monads.Either
             this TEither<T0, T1>.P<F0> e,
             Func<T1, T2> f
         )
-            where F0 : TFunctor<T1>.T<T0>.P<F0>
+            where F0 : TEither<T0, T1>.P<F0>, TFunctor<T1>.T<T0>.P<F0>
         {
             return e
                 .Match(

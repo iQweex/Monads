@@ -11,7 +11,7 @@ namespace Qweex.Monads.Tests.Common
         {
 
         }
-        public ApplicativeA(Func<TUnion<ErrorA, IFunc<Number, Number>>> factory) : base(factory)
+        public ApplicativeA(Func<TEither<ErrorA>.Func<Number, Number>> factory) : base(factory)
         {
         }
 

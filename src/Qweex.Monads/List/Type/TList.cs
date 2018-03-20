@@ -14,8 +14,9 @@ namespace Qweex.Monads.List.Type
             TMonad<T>.T<EmptyList>.P<L>,
             TFunctor<T>.T<EmptyList>.P<L>,
             TApplicative<T>.T<EmptyList>.P<L>
+            where L : TUnion<EmptyList, IEnumerable<T>>
         {
-            protected P(Func<TUnion<EmptyList, IEnumerable<T>>> factory) : base(factory)
+            protected P(Func<L> factory) : base(factory)
             {
             }
 

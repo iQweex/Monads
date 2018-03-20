@@ -17,12 +17,7 @@ namespace Qweex.Monads.Either.Type
     public class Either<TLeft, TInput, TResult>
         : TEither<TLeft>.Func<TInput, TResult>
     {
-        public Either(Func<TInput, TResult> func)
-            : this(new F<TInput, TResult>(func))
-        {
-                
-        }
-        public Either(Func<TUnion<TLeft, IFunc<TInput, TResult>>> factory) : base(factory)
+        public Either(Func<TEither<TLeft>.Func<TInput, TResult>> factory) : base(factory)
         {
         }
 

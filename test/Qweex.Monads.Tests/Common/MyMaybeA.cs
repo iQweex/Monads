@@ -8,9 +8,8 @@ namespace Qweex.Monads.Tests.Common
     {
         public MyMaybeA() : this(new Nothing())
         {
-            
         }
-        public MyMaybeA(Func<TUnion<Nothing, int>> factory) : base(factory)
+        public MyMaybeA(Func<MyMaybeA> factory) : base(factory)
         {
         }
 

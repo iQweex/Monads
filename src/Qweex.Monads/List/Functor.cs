@@ -12,7 +12,7 @@ namespace Qweex.Monads.List
             this TList<T0>.P<L0> list,
             Func<T0, T1> mapper
         )
-            where L0 : TFunctor<T0>.T<EmptyList>.P<L0>
+            where L0 : TList<T0>.P<L0>, TFunctor<T0>.T<EmptyList>.P<L0>
         {
             return list
                 .Match(
