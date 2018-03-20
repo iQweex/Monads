@@ -1,51 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Qweex.Monads.List;
 using Qweex.Monads.List.Type;
+using Qweex.Monads.Tests.Common;
 using Qweex.Unions;
 using Xunit;
 
 namespace Qweex.Monads.Tests
 {
-    public class MyList1 : TList<int>.P<MyList1>
-    {
-        public MyList1(params int[] elems) : this(elems.AsEnumerable())
-        {
-            
-        }
-        public MyList1(Func<TUnion<EmptyList, IEnumerable<int>>> factory) : base(factory)
-        {
-        }
-
-        public MyList1() : this(new EmptyList())
-        {
-            
-        }
-        public MyList1(EmptyList value) : base(value)
-        {
-        }
-
-        public MyList1(IEnumerable<int> value) : base(value)
-        {
-        }
-    }
-
-    public class MyList2 : TList<string>.P<MyList2>
-    {
-        public MyList2(Func<TUnion<EmptyList, IEnumerable<string>>> factory) : base(factory)
-        {
-        }
-
-        public MyList2(EmptyList value) : base(value)
-        {
-        }
-
-        public MyList2(IEnumerable<string> value) : base(value)
-        {
-        }
-    }
     public class ListMonadTests
     {
         [Fact]
