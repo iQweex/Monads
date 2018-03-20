@@ -1,10 +1,23 @@
-﻿namespace Qweex.Monads
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Qweex.Monads
 {
     public class Factory<TResult>
     {
-        private readonly object _value;
+        private readonly IEnumerable<object> _value;
+
+        public Factory() : this(new List<object>())
+        {
+
+        }
 
         public Factory(object value)
+            : this(new List<object>() { value })
+        {
+
+        }
+        private Factory(IEnumerable<object> value)
         {
             _value = value;
         }
@@ -12,8 +25,8 @@
         {
             return (TResult)
                 ((typeof(TResult))
-                    .GetConstructor(new [] { _value.GetType() })
-                    .Invoke(new object[] { _value }));
+                    .GetConstructor(_value.Select(v => v.GetType()).ToArray())
+                    .Invoke(_value.ToArray()));
         }
     }
 }
