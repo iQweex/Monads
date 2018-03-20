@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Qweex.Monads.Types;
 using Qweex.Unions;
@@ -9,6 +10,7 @@ namespace Qweex.Monads.List.Type
     {
         public abstract class P<L> :
             TUnion<EmptyList, IEnumerable<T>>,
+            IEnumerable<T>,
             TMonad<T>.T<EmptyList>.P<L>,
             TFunctor<T>.T<EmptyList>.P<L>,
             TApplicative<T>.T<EmptyList>.P<L>
@@ -23,6 +25,20 @@ namespace Qweex.Monads.List.Type
 
             protected P(IEnumerable<T> value) : base(value)
             {
+            }
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                return this
+                    .Match(
+                        e => new List<T>().GetEnumerator(),
+                        r => r.GetEnumerator()
+                    );
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
             }
         }
     }
