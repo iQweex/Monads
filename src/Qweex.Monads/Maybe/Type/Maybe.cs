@@ -6,11 +6,7 @@ using Qweex.Unions;
 
 namespace Qweex.Monads.Maybe.Type
 {
-    public class Nothing : Object
-    {
-
-    }
-    public class Maybe<TRight> : TEither<Nothing, TRight>.P<Maybe<TRight>>
+    public class Maybe<TRight> : TMaybe<TRight>.P<Maybe<TRight>>
     {
 
         public Maybe() : this(new Nothing())
