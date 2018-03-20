@@ -11,16 +11,17 @@ namespace Qweex.Monads.Maybe.Type
     {
         public abstract class P<E> :
             TEither<Nothing, TRight>.P<E>
+            where E : TUnion<Nothing, TRight>
         {
-            public P(Func<TUnion<Nothing, TRight>> factory) : base(factory)
+            protected P(Func<E> factory) : base(factory)
             {
             }
 
-            public P(Nothing value) : base(value)
+            protected P(Nothing value) : base(value)
             {
             }
 
-            public P(TRight value) : base(value)
+            protected P(TRight value) : base(value)
             {
             }
         }
