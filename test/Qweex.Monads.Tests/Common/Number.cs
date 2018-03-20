@@ -1,4 +1,4 @@
-namespace Types.Tests.Common
+namespace Qweex.Monads.Tests.Common
 {
     public class Number
     {

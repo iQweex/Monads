@@ -1,8 +1,6 @@
 ﻿using Qweex.Monads.Either.Type;
-using Qweex.Monads.Tests.Common;
-using Types.Tests.Common;
 
-namespace Types.Tests.Monads.Core
+namespace Qweex.Monads.Tests.Common
 {
     public class EitherX : TEither<ErrorA, Number>.P<EitherX>
     {

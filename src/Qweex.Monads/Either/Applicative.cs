@@ -1,5 +1,5 @@
 ﻿using Qweex.Monads.Either.Type;
-using Qweex.Monads.Monads;
+using Qweex.Monads.Types;
 using Qweex.Unions;
 
 namespace Qweex.Monads.Either

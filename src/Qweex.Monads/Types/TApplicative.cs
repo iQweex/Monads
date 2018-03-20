@@ -1,4 +1,4 @@
-﻿namespace Qweex.Monads.Monads
+﻿namespace Qweex.Monads.Types
 {
     public abstract class TApplicative<T1>
     {

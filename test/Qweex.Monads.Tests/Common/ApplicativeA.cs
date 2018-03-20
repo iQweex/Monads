@@ -1,7 +1,6 @@
 ﻿using System;
 using Qweex.Monads.Either.Type;
 using Qweex.Unions;
-using Types.Tests.Common;
 
 namespace Qweex.Monads.Tests.Common
 {

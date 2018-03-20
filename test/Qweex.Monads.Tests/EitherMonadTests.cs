@@ -3,8 +3,6 @@ using Qweex.Monads.List;
 using Qweex.Monads.List.Type;
 using Qweex.Monads.Tests.Common;
 using Qweex.Unions;
-using Types.Tests.Common;
-using Types.Tests.Monads.Core;
 using Xunit;
 
 namespace Qweex.Monads.Tests

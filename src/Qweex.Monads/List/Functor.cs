@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Qweex.Monads.List.Type;
-using Qweex.Monads.Monads;
+using Qweex.Monads.Types;
 using Qweex.Unions;
 
 namespace Qweex.Monads.List
