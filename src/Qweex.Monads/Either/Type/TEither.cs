@@ -7,20 +7,25 @@ namespace Qweex.Monads.Either.Type
     public abstract class TEither<TLeft>
     {
         public abstract class Func<TInput, TResult>
-            : TEither<TLeft, IFunc<TInput, TResult>>.P<Func<TInput, TResult>>
         {
-            protected Func(Func<Func<TInput, TResult>> factory) : base(factory)
+            public abstract class P<E>
+                : TEither<TLeft, IFunc<TInput, TResult>>.P<E>
+                where E : TUnion<TLeft, IFunc<TInput, TResult>>
             {
-            }
+                protected P(Func<E> factory) : base(factory)
+                {
+                }
 
-            protected Func(TLeft value) : base(value)
-            {
-            }
+                protected P(TLeft value) : base(value)
+                {
+                }
 
-            protected Func(IFunc<TInput, TResult> value) : base(value)
-            {
+                protected P(IFunc<TInput, TResult> value) : base(value)
+                {
+                }
             }
         }
+        
     }
 
     public abstract class TEither<TLeft, TRight>

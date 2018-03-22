@@ -6,6 +6,26 @@ using Qweex.Unions;
 
 namespace Qweex.Monads.List.Type
 {
+
+    //public abstract class TList
+    //{
+    //    public abstract class Func<TInput, TResult>
+    //        : TList<IFunc<TInput, TResult>>.P<>
+    //    {
+    //        protected Func(Func<Func<TInput, TResult>> factory) : base(factory)
+    //        {
+    //        }
+
+    //        protected Func(Nothing value) : base(value)
+    //        {
+    //        }
+
+    //        protected Func(IFunc<TInput, TResult> value) : base(value)
+    //        {
+    //        }
+    //    }
+    //}
+
     public abstract class TList<T>
     {
         public abstract class P<L> :

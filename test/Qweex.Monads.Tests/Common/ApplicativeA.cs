@@ -4,14 +4,14 @@ using Qweex.Unions;
 
 namespace Qweex.Monads.Tests.Common
 {
-    public class ApplicativeA : TEither<ErrorA>.Func<Number, Number>
+    public class ApplicativeA : TEither<ErrorA>.Func<Number, Number>.P<ApplicativeA>
     {
         public ApplicativeA(Func<Number, Number> func)
             : this(new F<Number, Number>(func))
         {
 
         }
-        public ApplicativeA(Func<TEither<ErrorA>.Func<Number, Number>> factory) : base(factory)
+        public ApplicativeA(Func<ApplicativeA> factory) : base(factory)
         {
         }
 
