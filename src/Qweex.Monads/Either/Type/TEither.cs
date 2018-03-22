@@ -1,6 +1,7 @@
 ﻿using System;
 using Qweex.Monads.Types;
 using Qweex.Unions;
+using Qweex.Unions.Kind2;
 
 namespace Qweex.Monads.Either.Type
 {

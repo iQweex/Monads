@@ -4,6 +4,7 @@ using System.Text;
 using Qweex.Monads.Either.Type;
 using Qweex.Monads.Types;
 using Qweex.Unions;
+using Qweex.Unions.Kind2;
 
 namespace Qweex.Monads.Maybe.Type
 {
