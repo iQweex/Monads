@@ -24,4 +24,26 @@ namespace Qweex.Monads.Maybe.Type
         {
         }
     }
+
+
+    public class Maybe<TInput, TResult>
+        : TMaybe.Func<TInput, TResult>
+    {
+        public Maybe(Func<TInput, TResult> func)
+            : this(new F<TInput, TResult>(func))
+        {
+                
+        }
+        public Maybe(Func<TMaybe.Func<TInput, TResult>> factory) : base(factory)
+        {
+        }
+
+        public Maybe(Nothing value) : base(value)
+        {
+        }
+
+        public Maybe(IFunc<TInput, TResult> value) : base(value)
+        {
+        }
+    }
 }

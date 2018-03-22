@@ -13,6 +13,8 @@ namespace Qweex.Monads.Tests
         [Fact]
         public static void Maybe_bind_case_1_2()
         {
+    
+
             Assert
                 .Equal(
                     "3",
