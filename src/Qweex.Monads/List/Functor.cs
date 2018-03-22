@@ -20,7 +20,7 @@ namespace Qweex.Monads.List
                     r => new ListM<T1>(r.Select(mapper))
                 );
         }
-
-
     }
+
+
 }
