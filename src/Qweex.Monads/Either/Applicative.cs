@@ -7,10 +7,10 @@ namespace Qweex.Monads.Either
     public static class Applicative
     {
         public static Either<T0, TR> Apply<A0, A1, T0, TI, TR>(
-            this TEither<T0, IFunc<TI, TR>>.P<A0> a,
+            this TEither<T0>.TFunc<TI, TR>.P<A0> a,
             TEither<T0, TI>.P<A1> fm
         )
-            where A0 : TEither<T0, IFunc<TI, TR>>.P<A0>, TApplicative<IFunc<TI, TR>>.T<T0>.P<A0>
+            where A0 : TEither<T0>.TFunc<TI, TR>.P<A0>, TApplicative<IFunc<TI, TR>>.T<T0>.P<A0>
             where A1 : TEither<T0, TI>.P<A1>, TApplicative<TI>.T<T0>.P<A1>
         {
             return a.Match(

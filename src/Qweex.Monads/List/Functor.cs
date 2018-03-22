@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Qweex.Monads.Either.Type;
 using Qweex.Monads.List.Type;
 using Qweex.Monads.Types;
 using Qweex.Unions;
@@ -20,7 +21,5 @@ namespace Qweex.Monads.List
                     r => new ListM<T1>(r.Select(mapper))
                 );
         }
-
-
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Text;
 using Qweex.Monads.List;
 using Qweex.Monads.List.Type;
 using Qweex.Monads.Tests.Common;
 using Qweex.Unions;
 using Xunit;
 
-namespace Qweex.Monads.Tests
+namespace Qweex.Monads.Tests.ListTests
 {
     public class ListMonadTests
     {

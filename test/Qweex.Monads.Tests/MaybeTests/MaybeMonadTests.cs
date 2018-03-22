@@ -1,18 +1,18 @@
-﻿using Qweex.Monads.Maybe.Type;
-using System.Collections.Generic;
-using System.Text;
-using Qweex.Monads.Either;
+﻿using Qweex.Monads.Either;
+using Qweex.Monads.Maybe.Type;
 using Qweex.Monads.Tests.Common;
 using Qweex.Unions;
 using Xunit;
 
-namespace Qweex.Monads.Tests
+namespace Qweex.Monads.Tests.MaybeTests
 {
     public class MaybeMonadTests
     {
         [Fact]
         public static void Maybe_bind_case_1_2()
         {
+    
+
             Assert
                 .Equal(
                     "3",

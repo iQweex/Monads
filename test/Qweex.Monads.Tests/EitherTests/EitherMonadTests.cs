@@ -5,7 +5,7 @@ using Qweex.Monads.Tests.Common;
 using Qweex.Unions;
 using Xunit;
 
-namespace Qweex.Monads.Tests
+namespace Qweex.Monads.Tests.EitherTests
 {
 
     public class EitherMonadTests
