@@ -10,7 +10,7 @@ namespace Qweex.Monads.Either
             this TEither<T0>.Func<TI, TR>.P<A0> a,
             TEither<T0, TI>.P<A1> fm
         )
-            where A0 : TEither<T0, IFunc<TI, TR>>.P<A0>, TApplicative<IFunc<TI, TR>>.T<T0>.P<A0>
+            where A0 : TEither<T0>.Func<TI, TR>.P<A0>, TApplicative<IFunc<TI, TR>>.T<T0>.P<A0>
             where A1 : TEither<T0, TI>.P<A1>, TApplicative<TI>.T<T0>.P<A1>
         {
             return a.Match(

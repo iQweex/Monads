@@ -7,24 +7,28 @@ using Qweex.Unions;
 namespace Qweex.Monads.List.Type
 {
 
-    //public abstract class TList
-    //{
-    //    public abstract class Func<TInput, TResult>
-    //        : TList<IFunc<TInput, TResult>>.P<>
-    //    {
-    //        protected Func(Func<Func<TInput, TResult>> factory) : base(factory)
-    //        {
-    //        }
+    public abstract class TList
+    {
+        public abstract class Func<TInput, TResult>
+        {
+            public abstract class P<L> 
+                : TList<IFunc<TInput, TResult>>.P<L>
+                where L : TUnion<EmptyList, IEnumerable<IFunc<TInput, TResult>>>
+            {
+                protected P(Func<L> factory) : base(factory)
+                {
+                }
 
-    //        protected Func(Nothing value) : base(value)
-    //        {
-    //        }
+                protected P(EmptyList value) : base(value)
+                {
+                }
 
-    //        protected Func(IFunc<TInput, TResult> value) : base(value)
-    //        {
-    //        }
-    //    }
-    //}
+                protected P(IEnumerable<IFunc<TInput, TResult>> value) : base(value)
+                {
+                }
+            }
+        }
+    }
 
     public abstract class TList<T>
     {
