@@ -6,7 +6,7 @@ namespace Qweex.Monads.Either.Type
 {
     public abstract class TEither<TLeft>
     {
-        public abstract class Func<TInput, TResult>
+        public abstract class TFunc<TInput, TResult>
         {
             public abstract class P<E>
                 : TEither<TLeft, IFunc<TInput, TResult>>.P<E>

@@ -20,13 +20,13 @@ namespace Qweex.Monads.Tests.ListTests
                         .Join(
                             String.Empty,
                             new ListM.TFunc<int, int>(
-                                    a => a + 2,
-                                    b => b * 3
-                                )
-                                .Apply(
-                                    new ListM<int>(1, 2, 3)
-                                )
-                                .Select(i => i.ToString())
+                                a => a + 2,
+                                b => b * 3
+                            )
+                            .Apply(
+                                new ListM<int>(1, 2, 3)
+                            )
+                            .Select(i => i.ToString())
                         )
                 );
         }

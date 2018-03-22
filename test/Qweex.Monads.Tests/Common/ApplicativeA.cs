@@ -4,7 +4,7 @@ using Qweex.Unions;
 
 namespace Qweex.Monads.Tests.Common
 {
-    public class ApplicativeA : TEither<ErrorA>.Func<Number, Number>.P<ApplicativeA>
+    public class ApplicativeA : TEither<ErrorA>.TFunc<Number, Number>.P<ApplicativeA>
     {
         public ApplicativeA(Func<Number, Number> func)
             : this(new F<Number, Number>(func))

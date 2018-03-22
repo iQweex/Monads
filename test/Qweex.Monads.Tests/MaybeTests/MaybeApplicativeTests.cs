@@ -13,7 +13,7 @@ namespace Qweex.Monads.Tests.MaybeTests
             Assert
                 .Equal(
                     "3",
-                    new Maybe<int, string>((i) => i.ToString())
+                    new Maybe.Type.Maybe.Func<int, string>((i) => i.ToString())
                         .Apply(new Maybe<int>(3))
                         .Match(
                             e => e.ToString(),

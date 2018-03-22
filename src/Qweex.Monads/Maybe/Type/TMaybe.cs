@@ -29,10 +29,10 @@ namespace Qweex.Monads.Maybe.Type
 
     public abstract class TMaybe
     {
-        public abstract class Func<TInput, TResult>
+        public abstract class TFunc<TInput, TResult>
         {
             public abstract class P<E> 
-                : TEither<Nothing>.Func<TInput, TResult>.P<E>
+                : TEither<Nothing>.TFunc<TInput, TResult>.P<E>
                 where E : TUnion<Nothing, IFunc<TInput, TResult>>
             {
                 protected P(Func<E> factory) : base(factory)
