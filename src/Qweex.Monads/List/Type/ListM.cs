@@ -28,23 +28,23 @@ namespace Qweex.Monads.List.Type
 
     public class ListM 
     {
-        public class TFunc<TInput, TResult> : TList.Func<TInput, TResult>.P<ListM.TFunc<TInput, TResult>>
+        public class Func<TInput, TResult> : TList.TFunc<TInput, TResult>.P<ListM.Func<TInput, TResult>>
         {
-            public TFunc(
-                params Func<TInput, TResult>[] fs
+            public Func(
+                params System.Func<TInput, TResult>[] fs
             )
                 : this(new List<IFunc<TInput, TResult>>(fs.Select(f => new F<TInput, TResult>(f))))
             {
             }
-            public TFunc(Func<TFunc<TInput, TResult>> factory) : base(factory)
+            public Func(Func<Func<TInput, TResult>> factory) : base(factory)
             {
             }
 
-            public TFunc(EmptyList value) : base(value)
+            public Func(EmptyList value) : base(value)
             {
             }
 
-            public TFunc(IEnumerable<IFunc<TInput, TResult>> value) : base(value)
+            public Func(IEnumerable<IFunc<TInput, TResult>> value) : base(value)
             {
             }
         }

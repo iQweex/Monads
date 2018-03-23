@@ -10,7 +10,7 @@ namespace Qweex.Monads.List.Type
 
     public abstract class TList
     {
-        public abstract class Func<TInput, TResult>
+        public abstract class TFunc<TInput, TResult>
         {
             public abstract class P<L> 
                 : TList<IFunc<TInput, TResult>>.P<L>

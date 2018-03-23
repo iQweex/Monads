@@ -15,16 +15,4 @@ namespace Qweex.Monads.Types
             }
         }
     }
-
-    //public static class Foldable
-    //{
-    //    public static void Foldr<L0, T0, TResult>(
-    //        this TList<T0>.P<L0> list,
-    //        TResult acc,
-    //        Func<T0, TResult, TResult> f
-    //    )
-    //    {
-    //        list.se
-    //    }
-    //}
 }
