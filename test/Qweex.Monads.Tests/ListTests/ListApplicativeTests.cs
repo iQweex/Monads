@@ -19,7 +19,7 @@ namespace Qweex.Monads.Tests.ListTests
                     String
                         .Join(
                             String.Empty,
-                            new ListM.TFunc<int, int>(
+                            new ListM.Func<int, int>(
                                 a => a + 2,
                                 b => b * 3
                             )
